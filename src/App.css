@@ -1,0 +1,73 @@
+.App {
+  text-align: center;
+  width: 100%;
+  
+}
+
+.Bank{
+  background-color: #8433aa;
+}
+
+label{
+  margin-left: 100px;
+}
+
+
+.Submit{
+  margin-top: 20px;
+  text-align: center;
+  margin-right: 55px;
+}
+
+.SubmitButton{
+  background-color: #8433aa; 
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.SubmitButton:hover {
+  background-color: #926db6; 
+}
+
+input{
+ margin-right: 200px;
+}
+
+.Search {
+  margin-left: 32%;
+  margin-bottom: 30px;
+  width: 800px;
+}
+
+/* Table container styles */
+.table-container {
+  padding: 20px; 
+}
+
+/* Table styles */
+.transaction-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ddd; 
+}
+
+/* Header row styles */
+.transaction-table th {
+  background-color: #f2f2f2; 
+  border: 1px solid #ddd; 
+  padding: 8px; 
+}
+
+/* Data row styles */
+.transaction-table td {
+  border: 1px solid #ddd; 
+  padding: 8px; 
+}
+
+/* Alternating row colors */
+.transaction-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9; 
+}
