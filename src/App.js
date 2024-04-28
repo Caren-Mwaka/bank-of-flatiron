@@ -25,7 +25,7 @@ function App() {
   //The new transaction is added to the end of the copied array.
 
   const filteredTransactions = transactions.filter((transaction) =>
-    transaction.description.toLowerCase().includes(searchTerm.toLowerCase())
+    transaction.description?.toLowerCase().includes(searchTerm.toLowerCase())
   );
   //filter method is used on the transactions array to create a new array called filteredTransactions
   //This array contains only the transactions whose description matches wholly or partially the search term entered by the user.

@@ -15,9 +15,11 @@ label{
 
 .Submit{
   margin-top: 20px;
-  text-align: center;
-  margin-right: 55px;
+  display: flex; /* Use flexbox */
+  justify-content: center;
+  margin-right: 117px;
 }
+
 
 .SubmitButton{
   background-color: #8433aa; 
@@ -37,11 +39,21 @@ input{
  margin-right: 200px;
 }
 
+/* search input styles */
 .Search {
-  margin-left: 32%;
+  width: 100%; 
   margin-bottom: 30px;
-  width: 800px;
+  text-align: center; 
 }
+
+.Search input {
+  width: 100%; 
+  max-width: 800px; 
+  padding: 10px; 
+  box-sizing: border-box; 
+  border-radius: 5px;
+}
+
 
 /* Table container styles */
 .table-container {
