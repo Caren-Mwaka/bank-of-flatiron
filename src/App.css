@@ -26,10 +26,11 @@ label{
   border-radius: 5px;
   font-size: 16px;
   cursor: pointer;
+
 }
 
 .SubmitButton:hover {
-  background-color: #926db6; 
+  background-color: #9072ac; 
 }
 
 input{

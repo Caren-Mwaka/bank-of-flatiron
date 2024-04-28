@@ -34,8 +34,7 @@ const Form = ({AddTransaction}) => {
   return (
     <div className='form'>
         <form onSubmit={handleSubmit}>
-             <label>Date: </label>
-             {/* React-datepicker component */}
+          
              <label>Date: </label>
               <input type="date" value={date}
               onChange={(e) => setDate(e.target.value)}

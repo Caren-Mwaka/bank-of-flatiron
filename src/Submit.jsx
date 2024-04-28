@@ -1,7 +1,7 @@
 import React from 'react';
 
 // SubmitButton component accepting onClick prop
-const SubmitButton = (props) => {
+function SubmitButton (props){
   return (
     <div className='Submit'>
     <button className='SubmitButton' type="submit" onClick={props.onClick}>

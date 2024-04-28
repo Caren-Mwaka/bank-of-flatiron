@@ -2,15 +2,15 @@ import React from 'react'
 
 const Table = ({ transactions }) => {
     return (
-        <div className="table-container"> {/* Add a container with padding */}
-        <table className="transaction-table"> {/* Apply a class name for styling */}
+        <div className="table-container">
+        <table className="transaction-table"> 
           <thead>
             <tr>
               <th>Date</th>
               <th>Description</th>
               <th>Category</th>
               <th>Amount</th>
-              {/* Add more headers as needed */}
+             
             </tr>
           </thead>
           <tbody>
@@ -20,7 +20,7 @@ const Table = ({ transactions }) => {
                 <td>{transaction.description}</td>
                 <td>{transaction.category}</td>
                 <td>{transaction.amount}</td>
-                {/* Render more transaction details here */}
+              
               </tr>
             ))}
           </tbody>
