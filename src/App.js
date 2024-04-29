@@ -30,6 +30,27 @@ function App() {
   //filter method is used on the transactions array to create a new array called filteredTransactions
   //This array contains only the transactions whose description matches wholly or partially the search term entered by the user.
   //This allows the user to filter transactions based on their description.
+
+  //sorting transactions alphabetically 
+  let sortedTransactions = [...filteredTransactions];
+  const [order, setOrder] = useState('ASC');
+//sort transactions based on a specific column (either "description" or "category"). 
+  const sorting = (col) => {
+    if (order === 'ASC') {
+      const sorted = sortedTransactions.sort((a, b) =>
+        a[col].toLowerCase() > b[col].toLowerCase() ? 1 : -1
+      );
+      setTransactions(sorted);
+      setOrder("DSC");
+    } else if (order === 'DSC') {
+      const sorted = sortedTransactions.sort((a, b) =>
+        a[col].toLowerCase() < b[col].toLowerCase() ? -1 : 1
+      );
+      setTransactions(sorted);
+      setOrder("ASC");
+    }
+  };
+
   return (
     <div className="App">
       <h1 className="Bank">The Royal Bank of Flatiron</h1>
@@ -39,7 +60,7 @@ function App() {
       <Form AddTransaction={handleAddTransaction} />
       {/* handleAddTransaction function is passed as a prop to Form component using AddTransaction. */}
       <div className="TableContainer">
-        <Table transactions={filteredTransactions} />
+        <Table transactions={filteredTransactions} sorting={sorting} />
       </div>
     </div>
   );

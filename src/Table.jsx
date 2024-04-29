@@ -3,6 +3,8 @@ import React from 'react';
 function Table (props) {
     //Table function takes props as input
     //props in this case is the transcations properties passed to the Table component from the App component.
+    
+
   return (
     <div className="table-container">
       <table className="transaction-table"> 
@@ -10,8 +12,10 @@ function Table (props) {
         <thead>  
           <tr>
             <th>Date</th>
-            <th>Description</th>
-            <th>Category</th>
+          {/* added onClick to the "Description" and "Category" headers to trigger sorting when clicked. */}
+            <th onClick={()=> props.sorting("description")}>Description</th>
+            <th onClick={()=> props.sorting("category")}>Category</th>
+            {/* sorting function passed  as a prop from the App component */}
             <th>Amount</th>
           </tr>
         </thead>
