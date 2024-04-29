@@ -31,23 +31,43 @@ function App() {
   //This array contains only the transactions whose description matches wholly or partially the search term entered by the user.
   //This allows the user to filter transactions based on their description.
 
-  //sorting transactions alphabetically 
-  let sortedTransactions = [...filteredTransactions];
-  const [order, setOrder] = useState('ASC');
-//sort transactions based on a specific column (either "description" or "category"). 
-  const sorting = (col) => {
-    if (order === 'ASC') {
-      const sorted = sortedTransactions.sort((a, b) =>
-        a[col].toLowerCase() > b[col].toLowerCase() ? 1 : -1
-      );
-      setTransactions(sorted);
-      setOrder("DSC");
-    } else if (order === 'DSC') {
-      const sorted = sortedTransactions.sort((a, b) =>
-        a[col].toLowerCase() < b[col].toLowerCase() ? -1 : 1
-      );
-      setTransactions(sorted);
-      setOrder("ASC");
+  // Initializing sortBy state
+  const [sortBy, setSortBy] = useState(null);
+  //handleSort function takes one argument, criteria, which represents the sorting criteria (either 'category' or 'description').
+  const handleSort = (criteria) => {
+    if (sortBy === criteria) {
+      // Togglimg between ascending and descending order if already sorted by the same criteria
+      if (sortBy === "category") {
+        // Sorting by category in descending order
+        const sorted = [...transactions].sort((a, b) =>
+          b.category.toLowerCase() < a.category.toLowerCase() ? -1 : 1
+        );
+        //Creating a new sorted array using the spread operator (...transactions).
+        setTransactions(sorted);
+      } else if (sortBy === "description") {
+        // Sorting by description in descending order
+        const sorted = [...transactions].sort((a, b) =>
+          b.description.toLowerCase() < a.description.toLowerCase() ? -1 : 1
+        );
+        setTransactions(sorted);
+      }
+      setSortBy(null); // Resetting the sort order
+    } else {
+      // Setting sort order to the selected criteria
+      setSortBy(criteria);
+      if (criteria === "category") {
+        // Sorting by category in ascending order
+        const sorted = [...transactions].sort((a, b) =>
+          a.category.toLowerCase() < b.category.toLowerCase() ? -1 : 1
+        );
+        setTransactions(sorted);
+      } else if (criteria === "description") {
+        // Sorting by description in ascending order
+        const sorted = [...transactions].sort((a, b) =>
+          a.description.toLowerCase() < b.description.toLowerCase() ? -1 : 1
+        );
+        setTransactions(sorted);
+      }
     }
   };
 
@@ -60,7 +80,7 @@ function App() {
       <Form AddTransaction={handleAddTransaction} />
       {/* handleAddTransaction function is passed as a prop to Form component using AddTransaction. */}
       <div className="TableContainer">
-        <Table transactions={filteredTransactions} sorting={sorting} />
+        <Table transactions={filteredTransactions} sorting={handleSort} />
       </div>
     </div>
   );
