@@ -64,7 +64,7 @@ Git
 Git clone https://github.com/Caren-Mwaka/bank-of-flatiron.git
 ```
 # Live Link
-[Git](https://caren-mwaka.github.io/bank-of-flatiron/)
+[deployment](https://bank-of-flatiron-iota-sand.vercel.app/)
 
 ## Support and contact details
 github.com/Caren-Mwaka
@@ -72,5 +72,4 @@ github.com/Caren-Mwaka
 ### License
 The content of this site is licensed under the MIT license
 Copyright (c) 2024.
-
 
